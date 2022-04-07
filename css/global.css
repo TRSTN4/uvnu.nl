@@ -1,0 +1,113 @@
+/* uvnu.nl - Het laatste nieuws over het weer! */
+/* Website: https://uvnu.nl */
+
+body {
+    /* Position */
+    margin: 0;
+
+    /* Text */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+    /* Background */
+    background: #d6d6d6;
+}
+
+.logo {
+    /* Position */
+    display: block;
+    width: 62px;
+    height: 80px;
+    margin: 10px auto 20px;
+
+    /* Text */
+    color: #ffffff;
+}
+
+.navigation-bar {
+    /* Position */
+    overflow: hidden;
+    padding-bottom: 10px;
+
+    /* Text */
+    text-align: center;
+
+    /* Border */
+    border-bottom: 5px solid #5dd2d9;
+
+    /* Background */
+    background-color: #64C9CF;
+    background-image: linear-gradient(to left top, #68ebf2 0%, #64C9CF 100%);
+}
+
+.navigation-bar a {
+    /* Position */
+    display: inline-block;
+    padding: 25px;
+
+    /* Text */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: #f2f2f2;
+}
+
+.navigation-bar a:hover {
+    /* Text */
+    color: #ffffff;
+
+    /* Background */
+    background-color: #59d3d9;
+}
+
+.navigation-bar a.navigation-bar-active {
+    /* Text */
+    color: #ffffff;
+
+    /* Background */
+    background-color: #5acbd1;
+}
+
+.copyright-bar {
+    /* Position */
+    margin-top: 200px;
+    padding: 20px;
+
+    /* Text */
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f2f2f2;
+
+    /* Border */
+    border-top: 5px solid #2b2b29;
+
+    /* Background */
+    background-color: #2b2b29;
+    background-image: linear-gradient(to left top, #2b2b29 0%, #61615b 100%);
+}
+
+.copyright-bar p {
+    /* Position */
+    margin: 0;
+}
+
+.copyright-bar a {
+    /* Text */
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.copyright-bar a:hover {
+    /* Mouse */
+    cursor:pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Position */
+    .navigation-bar a {
+        width: 80%;
+    }
+}

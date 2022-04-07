@@ -1,0 +1,243 @@
+/* uvnu.nl - Het laatste nieuws over het weer! */
+/* Website: https://uvnu.nl */
+
+.pac-icon {
+    /* Position */
+    width: 0;
+
+    /* Background */
+    background-image: none !important;
+}
+
+.pac-item-query {
+    /* Text */
+    color: #000000;
+    font-weight: 400;
+}
+
+.pac-container, .pac-item {
+    /* Position */
+    width: 100%;
+}
+
+.pac-item {
+    /* Text */
+    font-size: 15px;
+}
+
+.pac-item-query {
+    /* Text */
+    font-size: 20px;
+    color: #000000
+}
+
+.pac-container {
+    /* Border */
+    border: 2px solid #000000;
+    border-radius: 15px;
+}
+
+.pac-container:after {
+    /* Position */
+    height: 0;
+
+    /* Background */
+    background-image: none !important;
+}
+
+.data-container {
+    /* Position */
+    margin-top: 200px;
+    padding: 40px;
+
+    /* Text */
+    text-align: center;
+    color: #000000;
+
+    /* Border */
+    border-top: 5px solid #f5aa2f;
+    border-bottom: 5px solid #FFB740;
+
+    /* Background */
+    background-color: #FFB740;
+    background-image: linear-gradient(to left top, #FFB740 0%, #FDE49C 50%, #FFB740 100%);
+}
+
+.result-container {
+    /* Position */
+    margin: 50px auto auto;
+    padding: 40px;
+    max-width: 1200px;
+    overflow: hidden;
+
+    /* Border */
+    border: 5px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #ebebeb;
+}
+
+.input-field input {
+    /* Position */
+    margin: 10px auto auto;
+    padding: 10px;
+    overflow: auto;
+
+    /* Text */
+    text-align: center;
+    font-size: 30px;
+
+    /* Border */
+    outline: none;
+    border: 4px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #ebebeb;
+}
+
+.legenda-container {
+    /* Position */
+    max-width: 1200px;
+    overflow: hidden;
+    margin: 50px auto auto;
+    padding: 40px;
+
+    /* Border */
+    border: 5px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #ebebeb;
+}
+
+.find-location button {
+    /* Position */
+    overflow: auto;
+    margin: 10px auto auto;
+    padding: 10px;
+
+    /* Text */
+    text-align: center;
+    font-size: 30px;
+
+    /* Border */
+    outline: none;
+    border: 4px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background-color: #d6d6d6;
+}
+
+.find-location:hover button{
+    /* Background */
+    background-color: #c4c4c4;
+}
+
+.legenda {
+    /* Grid */
+    display: grid;
+    grid-gap: 15px;
+}
+
+.legenda > div {
+    /* Position */
+    padding: 10px;
+
+    /* Text */
+    font-weight: bold;
+
+    /* Border */
+    border: 3px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background: #d6d6d6;
+}
+
+.legenda-header {
+    /* Grid */
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.legenda-block-one {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.legenda-block-two {
+    /* Grid */
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.legenda-block-three {
+    /* Grid */
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.legenda-block-four {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .data-container {
+        /* Position */
+        padding: 15px;
+    }
+
+    .output-container {
+        /* Position */
+        max-width: 100%;
+    }
+
+    .input-field input {
+        /* Text */
+        font-size: 25px;
+    }
+
+    .find-location button {
+        /* Position */
+        width: 100%;
+
+        /* Text */
+        font-size: 25px;
+    }
+
+    .legenda-header {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 1;
+    }
+
+    .legenda-block-one {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 1;
+    }
+
+    .legenda-block-two {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 3 / span 1;
+    }
+
+    .legenda-block-three {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 4 / span 1;
+    }
+
+    .legenda-block-four {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 5 / span 1;
+    }
+}

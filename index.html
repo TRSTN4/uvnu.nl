@@ -1,0 +1,371 @@
+<!-- uvnu.nl - Het laatste nieuws over het weer! -->
+<!-- Website: https://uvnu.nl -->
+
+<!DOCTYPE html>
+<!-- Language set to Dutch. -->
+<html lang="nl">
+    <head>
+        <!-- Sets the viewport meta. -->
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title of the page. -->
+        <title>Home | uvnu.nl - Het laatste nieuws over het weer!</title>
+        <!-- Icon of the website/page. -->
+        <link rel="icon" href="/img/favicon.png" type="image/png" sizes="32x32">
+        <!-- Imports the CSS/Stylesheet of the index/home page. -->
+        <link rel="stylesheet" href="css/index.css">
+        <!-- Imports the global CSS/Stylesheet. -->
+        <link rel="stylesheet" href="css/global.css">
+        <!-- Imports the CSS/Stylesheet of the display grid. -->
+        <link rel="stylesheet" href="css/display.css">
+        <!-- Imports Font Awesome css file. -->
+        <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
+        <!-- Imports the index/home page javascript file. -->
+        <script type="text/javascript" src="js/index.js"></script>
+        <!-- Imports the Google places api libary. -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8OhwB5oEBZMHOstMKH0yg7YaSt9cY114&callback=initAutocomplete&language=nl&libraries=places" async></script>
+    </head>
+    <!-- Changes the background. -->
+    <body class="background">
+    <!-- Navigation bar. -->
+    <header class="navigation-bar">
+        <nav>
+            <!-- Logo on the navigation bar. -->
+            <img class="logo" src="/img/logo_white.png" alt="Logo">
+            <!-- Links for the navigation bar. -->
+            <a class="navigation-bar-active" href="/">Home</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <!-- Container that displays data from a place name. -->
+    <div class="data-container">
+        <h1>Vindt hier informatie over het weer!</h1>
+        <br><br>
+        <div style="overflow: hidden; text-align: center;">
+            <!-- Shows the input field where the user can select/type a place name. -->
+            <div class="input-field">
+                <label for="autocomplete"></label>
+                <!-- Input field for the Google autocomplete/places api. -->
+                <input class="" id="autocomplete" placeholder="Typ een plaatsnaam"/>
+            </div>
+            <!-- Shows the button where the user can get their current location. -->
+            <div class="find-location">
+                <!-- Button for the Google geocoding api. -->
+                <button class="findLocationButton" id="geocoding" onclick="initGeocoding()">Vind mijn huidige locatie <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <!-- Container that displays the results. -->
+        <div class="result-container">
+            <!-- Displays the results and the result icons. -->
+            <div class="display">
+                <!-- Displays the users selected place name. -->
+                <div class="display-place-name">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p id="place_name"></p>
+                </div>
+                <!-- Displays the current date from the users selected place. -->
+                <div class="display-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    <p id="date"></p>
+                </div>
+                <!-- Displays the current time from the users selected place. -->
+                <div class="display-time">
+                    <i class="fas fa-clock"></i>
+                    <p id="time"></p>
+                </div>
+                <!-- Displays the current timezone from the users selected place. -->
+                <div class="display-timezone">
+                    <i class="fas fa-watch-calculator"></i>
+                    <p id="timezone"></p>
+                </div>
+                <!-- Displays the current timezone offset from the users selected place. -->
+                <div class="display-timezone-offset">
+                    <i class="fas fa-history"></i>
+                    <p id="timezone_offset"></p>
+                </div>
+                <!-- Displays the current weather description from the users selected place. -->
+                <div class="display-weather-description">
+                    <i class="fas fa-sun" id="weather_description-icon"></i>
+                    <p id="weather_description"></p>
+                </div>
+                <!-- Displays the current uv index from the users selected place. -->
+                <div class="display-uv">
+                    <i class="fas fa-sun-dust" style="font-size: 40px;"></i>
+                    <p id="uv" style="font-size: 30px;"></p>
+                </div>
+                <!-- Displays the current sunrise date from the users selected place. -->
+                <div class="display-sunrise">
+                    <i class="fas fa-sunrise"></i>
+                    <p id="sunrise"></p>
+                </div>
+                <!-- Displays the current sunset date from the users selected place. -->
+                <div class="display-sunset">
+                    <i class="fas fa-sunset"></i>
+                    <p id="sunset"></p>
+                </div>
+                <!-- Displays the current clouds from the users selected place. -->
+                <div class="display-clouds">
+                    <i class="fas fa-smoke"></i>
+                    <p id="clouds"></p>
+                </div>
+                <!-- Displays the current wind speed from the users selected place. -->
+                <div class="display-wind-speed">
+                    <i class="fas fa-wind"></i>
+                    <p id="wind_speed"></p>
+                </div>
+                <!-- Displays the current wind deg from the users selected place. -->
+                <div class="display-wind-degree">
+                    <i class="fas fa-windsock"></i>
+                    <p id="wind_degree"></p>
+                </div>
+                <!-- Displays the current wind gust from the users selected place. -->
+                <div class="display-wind-gust">
+                    <i class="fas fa-wind-warning"></i>
+                    <p id="wind_gust"></p>
+                </div>
+                <!-- Displays the current temperature from the users selected place. -->
+                <div class="display-temperature">
+                    <i class="fas fa-thermometer-half" id="temperature-icon"></i>
+                    <p id="temperature"></p>
+                </div>
+                <!-- Displays the current feels like temperature from the users selected place. -->
+                <div class="display-feels-like">
+                    <i class="fas fa-thermometer"></i>
+                    <p id="feels_like"></p>
+                </div>
+                <!-- Displays the current humidity from the users selected place. -->
+                <div class="display-humidity">
+                    <i class="fas fa-humidity"></i>
+                    <p id="humidity"></p>
+                </div>
+                <!-- Displays the current dew point from the users selected place. -->
+                <div class="display-dew-point">
+                    <i class="fas fa-dewpoint"></i>
+                    <p id="dew_point"></p>
+                </div>
+                <!-- Displays the current pressure from the users selected place. -->
+                <div class="display-pressure">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    <p id="pressure"></p>
+                </div>
+                <!-- Displays the current visibility from the users selected place. -->
+                <div class="display-visibility">
+                    <i class="fas fa-fog"></i>
+                    <p id="visibility"></p>
+                </div>
+            </div>
+        </div>
+        <!-- Shows the legenda container. -->
+        <div class="legenda-container">
+            <!-- Displays the legenda. -->
+            <div class="legenda">
+                <!-- Shows the legenda header. -->
+                <div class="legenda-header">
+                    <h2>Legenda</h2>
+                </div>
+                <!-- Shows the legenda 'weather' info. -->
+                <div class="legenda-block-one">
+                    <!-- Weather -->
+                    <h3>Weer</h3>
+                    <hr>
+                    <p>
+                        <!-- Clear sky and day -->
+                        <span class="fas fa-sun"></span>
+                        <span>Heldere lucht & Dag</span>
+                    </p>
+                    <p>
+                        <!-- Clear sky and night -->
+                        <span class="fas fa-moon"></span>
+                        <span>Heldere lucht & Nacht</span>
+                    </p>
+                    <p>
+                        <!-- Rarely clouds and day -->
+                        <span class="fas fa-cloud-sun"></span>
+                        <span>Weinig wolken & Dag</span>
+                    </p>
+                    <p>
+                        <!-- Rarely clouds and night -->
+                        <span class="fas fa-cloud-moon"></span>
+                        <span>Weinig wolken & Nacht</span>
+                    </p>
+                    <p>
+                        <!-- Scattered clouds -->
+                        <span class="fas fa-cloud"></span>
+                        <span>Verspreide bewolking</span>
+                    </p>
+                    <p>
+                        <!-- Broken clouds -->
+                        <span class="fas fa-clouds"></span>
+                        <span>Gebroken Wolken</span>
+                    </p>
+                    <p>
+                        <!-- Shower rain -->
+                        <span class="fas fa-cloud-showers"></span>
+                        <span>Douche regen</span>
+                    </p>
+                    <p>
+                        <!-- Rain and day -->
+                        <span class="fas fa-cloud-sun-rain"></span>
+                        <span>Regen & Dag</span>
+                    </p>
+                    <p>
+                        <!-- Rain and night -->
+                        <span class="fas fa-cloud-moon-rain"></span>
+                        <span>Regen & Nacht</span>
+                    </p>
+                    <p>
+                        <!-- Thunderstorm -->
+                        <span class="fas fa-thunderstorm"></span>
+                        <span>Onweersbui </span>
+                    </p>
+                    <p>
+                        <!-- Snow -->
+                        <span class="fas fa-snowflake"></span>
+                        <span>Sneeuw</span>
+                    </p>
+                    <p>
+                        <!-- Fog -->
+                        <span class="fas fa-fog"></span>
+                        <span>Mist</span>
+                    </p>
+                </div>
+                <!-- Shows the legenda 'sun' and 'temperature' info. -->
+                <div class="legenda-block-two">
+                    <!-- Sun -->
+                    <h3>Zon</h3>
+                    <hr>
+                    <p>
+                        <!-- UV index -->
+                        <span class="fas fa-sun-dust"></span>
+                        <span>UV Index</span>
+                    </p>
+                    <p>
+                        <!-- Sunrise -->
+                        <span class="fas fa-sunrise"></span>
+                        <span>Zonsopgang</span>
+                    </p>
+                    <p>
+                        <!-- Sunset -->
+                        <span class="fas fa-sunset"></span>
+                        <span>Zonsondergang</span>
+                    </p>
+                    <br>
+                    <!-- Temperature -->
+                    <h3>Temperatuur</h3>
+                    <hr>
+                    <p>
+                        <!-- Very hot / 31+°C -->
+                        <span class="fas fa-temperature-hot"></span>
+                        <span>Heet / 31+°C</span>
+                    </p>
+                    <p>
+                        <!-- Hot / 31+°C -->
+                        <span class="fas fa-thermometer-three-quarters"></span>
+                        <span>Warm / 21-30°C</span>
+                    </p>
+                    <p>
+                        <!-- Mild / 31+°C -->
+                        <span class="fas fa-thermometer-half"></span>
+                        <span>Mild / 11-20°C</span>
+                    </p>
+                    <p>
+                        <!-- Cold / -0-10°C -->
+                        <span class="fas fa-temperature-frigid"></span>
+                        <span>Koud / -0-10°C</span>
+                    </p>
+                    <p>
+                        <!-- Feels like / *°C -->
+                        <span class="fas fa-thermometer"></span>
+                        <span>Voelt als / *°C</span>
+                    </p>
+                </div>
+                <!-- Shows the legenda 'wind' and 'air' info. -->
+                <div class="legenda-block-three">
+                    <!-- Wind -->
+                    <h3>Wind</h3>
+                    <hr>
+                    <p>
+                        <!-- Wind speed -->
+                        <span class="fas fa-wind"></span>
+                        <span>Windsnelheid</span>
+                    </p>
+                    <p>
+                        <!-- Wind degree -->
+                        <span class="fas fa-windsock"></span>
+                        <span>Windgraad</span>
+                    </p>
+                    <p>
+                        <!-- Gust of wind -->
+                        <span class="fas fa-wind-warning"></span>
+                        <span>Windvlaag</span>
+                    </p>
+                    <br>
+                    <!-- Air -->
+                    <h3>Lucht</h3>
+                    <hr>
+                    <p>
+                        <!-- Clouds % -->
+                        <span class="fas fa-smoke"></span>
+                        <span>Wolken %</span>
+                    </p>
+                    <p>
+                        <!-- Humidity -->
+                        <span class="fas fa-humidity"></span>
+                        <span>Vochtigheid</span>
+                    </p>
+                    <p>
+                        <!-- Dewpoint -->
+                        <span class="fas fa-dewpoint"></span>
+                        <span>Dauwpunt</span>
+                    </p>
+                    <p>
+                        <!-- Pressure -->
+                        <span class="fas fa-compress-arrows-alt"></span>
+                        <span>Druk</span>
+                    </p>
+                    <p>
+                        <!-- Visibility -->
+                        <span class="fas fa-fog"></span>
+                        <span>Zichtbaarheid </span>
+                    </p>
+                </div>
+                <!-- Shows the legenda 'other' info. -->
+                <div class="legenda-block-four">
+                    <!-- Other -->
+                    <h3>Overig</h3>
+                    <hr>
+                    <p>
+                        <!-- Place name -->
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span>Plaatsnaam</span>
+                    </p>
+                    <p>
+                        <!-- Date -->
+                        <span class="fas fa-calendar-alt"></span>
+                        <span>Datum</span>
+                    </p>
+                    <p>
+                        <!-- Time -->
+                        <span class="fas fa-clock"></span>
+                        <span>Tijd</span>
+                    </p>
+                    <p>
+                        <!-- Timezone -->
+                        <i class="fas fa-watch-calculator"></i>
+                        <span>Tijdzone</span>
+                    </p>
+                    <p>
+                        <!-- Timezone offset -->
+                        <i class="fas fa-history"></i>
+                        <span>Tijdzone offset</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom bar for the copyright notice. -->
+    <footer class="copyright-bar">
+        <!-- Copyright notice and links for websites. -->
+        <p>© <a href="https://trstn4.com">TRSTN4.com</a> | <a href="https://uvnu.nl">uvnu.nl</a></p>
+    </footer>
+    </body>
+</html>

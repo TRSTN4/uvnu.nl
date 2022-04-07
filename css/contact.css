@@ -1,0 +1,20 @@
+/* uvnu.nl - Het laatste nieuws over het weer! */
+/* Website: https://uvnu.nl */
+
+.contact-container {
+    /* Position */
+    margin-top: 200px;
+    padding: 50px 10px 50px 10px;
+
+    /* Text */
+    text-align: center;
+    color: #000000;
+
+    /* Border */
+    border-top: 5px solid #f5aa2f;
+    border-bottom: 5px solid #FFB740;
+
+    /* Background */
+    background-color: #FFB740;
+    background-image: linear-gradient(to left top, #FFB740 0%, #FDE49C 50%, #FFB740 100%);
+}

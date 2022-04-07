@@ -1,0 +1,253 @@
+/* uvnu.nl - Het laatste nieuws over het weer! */
+/* Website: https://uvnu.nl */
+
+.display {
+    /* Grid */
+    display: grid;
+    grid-gap: 15px;
+}
+
+.display > div {
+    /* Position */
+    padding: 10px;
+
+    /* Text */
+    font-weight: bold;
+
+    /* Border */
+    border: 3px solid #000000;
+    border-radius: 15px;
+
+    /* Background */
+    background: #d6d6d6;
+}
+
+.display-place-name {
+    /* Grid */
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.display-date {
+    /* Grid */
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.display-time {
+    /* Grid */
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.display-timezone {
+    /* Grid */
+    grid-column: 2 / span 1;
+    grid-row: 8 / span 1;
+}
+
+.display-timezone-offset {
+    /* Grid */
+    grid-column: 3 / span 1;
+    grid-row: 8 / span 1;
+}
+
+.display-weather-description {
+    /* Grid */
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+}
+
+.display-uv {
+    /* Grid */
+    grid-column: 2 / span 2;
+    grid-row: 4 / span 4;
+}
+
+.display-sunrise {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.display-sunset {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.display-clouds {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.display-wind-speed {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
+}
+
+.display-wind-degree {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+}
+
+.display-wind-gust {
+    /* Grid */
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+}
+
+.display-temperature {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.display-feels-like {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.display-humidity {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+}
+
+.display-dew-point {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 5 / span 1;
+}
+
+.display-pressure {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 6 / span 1;
+}
+
+.display-visibility {
+    /* Grid */
+    grid-column: 4 / span 1;
+    grid-row: 7 / span 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .display-place-name {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 1;
+    }
+
+    .display-date {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 2 / span 1;
+    }
+
+    .display-time {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 3 / span 1;
+    }
+
+    .display-timezone {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 4 / span 1;
+    }
+
+    .display-timezone-offset {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 5 / span 1;
+    }
+
+    .display-weather-description {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 10 / span 1;
+    }
+
+    .display-uv {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 6 / span 4;
+    }
+
+    .display-sunrise {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 13 / span 1;
+    }
+
+    .display-sunset {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 14 / span 1;
+    }
+
+    .display-clouds {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 15 / span 1;
+    }
+
+    .display-wind-speed {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 16 / span 1;
+    }
+
+    .display-wind-degree {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 17 / span 1;
+    }
+
+    .display-wind-gust {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 18 / span 1;
+    }
+
+    .display-temperature {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 11 / span 1;
+    }
+
+    .display-feels-like {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 12 / span 1;
+    }
+
+    .display-humidity {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 19 / span 1;
+    }
+
+    .display-dew-point {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 20 / span 1;
+    }
+
+    .display-pressure {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 21 / span 1;
+    }
+
+    .display-visibility {
+        /* Grid */
+        grid-column: 1 / span 4;
+        grid-row: 22 / span 1;
+    }
+}
